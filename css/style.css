@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+   /* line-height: 1.6; */
+   font-family: 'Muli', sans-serif;
+   text-align: center;
+}
+
+.logo{
+    padding: 4em;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+input[type=text]{   
+    /* Remove First */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Then Style */
+    border-radius: 15px;
+    border: 1px dashed #BBB;
+    padding: 10px;
+    line-height: 20px;
+    text-align: center;
+    background: transparent;
+    outline: none;    
+}
+
+input[type=text]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #9A9C9B;
+    border-radius: 17px;
+    font-family: 'Muli', sans-serif;
+    font-size: 1.1em;
+    text-align: center;
+    width: 75%;
+    color: #D4D4D4;
+    height: 2.7rem;
+    outline: none;   
+}
+
+input[type=password]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #9A9C9B;
+    border-radius: 17px;
+    font-family: 'Muli', sans-serif;
+    font-size: 1.1em;
+    text-align: center;
+    width: 75%;
+    color: #D4D4D4;
+    height: 2.7rem;
+    outline: none;   
+}
+
+input[type=submit]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 5px 15px;
+    background-color: #1EC0BF;
+    color: white;
+    border: none;
+    border-radius: 17px;
+    font-family: 'Muli', sans-serif;
+    font-size: 1.1em;
+    text-align: center;
+    width: 75%;
+    height: 2.7rem;
+    outline: none;   
+}
+
+.fecha{
+    padding: 25%;
+}
+
+#fechaActual{
+    color: #9A9C9B;
+    font-size: 0.7em;
+}
+
+.form{
+    width: 100%;
+    min-width: 9rem;
+    margin-top: 5rem;
+}
+
+/* DASHBOARD */
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: ". ." ". .";
+}
+
+.one, .two, .three, .four{
+    background-color: #1EC0BF;
+    color: white;
+    border-radius: 15px;
+    border: solid 0.1px #7F7F7F;
+    padding: 30px;
+    margin: 10px;
+}
