@@ -1,16 +1,12 @@
 <?php
 
-    $server = "localhost:3306";
-    $username = "root";
-    $password = "";
-    $db = "tecnologico_vivesolutionsapp";
+    $host = 'localhost';
+    $user = 'tecnologico';
+    $password = 'CoolerMaster22!';
+    $dbname = 'tecnologico_vivesolutionsapp';
 
-    try{
-        $handle = new PDO("mysql:host=$server;dbname=$db", "$username", "$password");
-        $handle->setAttribute(PDO::ATTR_ERRMODE, PDO::ATTR_ERRMODE_EXCEPTION);
-        echo "CONNECTED";
-    }
-    catch(PDOException $e){
-        die("Oops! Something went wrong  in the database.");
-    }
+    $dsn = 'mysql:host='. $host .';dbname='. $dbname;
+
+    $pdo = new PDO($dsn, $user, $password);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 ?>
