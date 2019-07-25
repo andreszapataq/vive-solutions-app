@@ -1,5 +1,5 @@
 <?php
-    require_once 'db/connect.php';
+    require_once './db/connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
 </head>
 <body>
     <?php
-        $sql = 'SELECT Producto.prodnombre, Stock.stock FROM Producto INNER JOIN Stock ON Producto.prodcodigo = Stock.prodcodigo;';
+        $sql = 'SELECT Producto.prodnombre, Stock.stock FROM Producto INNER JOIN Stock ON Producto.prodcodigo = Stock.prodcodigo';
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $inventario = $stmt->fetchAll();
