@@ -24,20 +24,20 @@
     //tavo
 
     function checkLogin($usuario, $contrasena){
-        // $sql = 'SELECT * FROM Usuario WHERE usuario = :usuario AND contrasena = :contrasena';
+        $sql = 'SELECT * FROM Usuario WHERE usuario = :usuario AND contrasena = :contrasena';
 
         //tavo
         $pdo = getConnection();
-        $sql = "SELECT * FROM users WHERE username = :username AND password = :password";
+        // $sql = "SELECT * FROM users WHERE username = :username AND password = :password";
         //tavo
 
         $stmt = $pdo->prepare($sql);
 
         //tavo
-        $stmt->execute(['username' => $usuario, 'password' => $contrasena]);
+        // $stmt->execute(['username' => $usuario, 'password' => $contrasena]);
         //tavo
 
-        // $stmt->execute(['usuario' => $usuario, 'contrasena' => $contrasena]);
+        $stmt->execute(['usuario' => $usuario, 'contrasena' => $contrasena]);
         if($stmt->rowCount() > 0){
             $conectado = $stmt->fetchAll();
             return true;
