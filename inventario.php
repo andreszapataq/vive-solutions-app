@@ -13,14 +13,7 @@
 </head>
 <body>
     <?php
-        $sql = 'SELECT Producto.prodnombre, Stock.stock FROM Producto INNER JOIN Stock ON Producto.prodcodigo = Stock.prodcodigo';
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
-        $inventario = $stmt->fetchAll();
-
-        foreach($inventario as $inv){
-            echo $inv->prodnombre . ' ' . $inv->stock . '<br>';
-        }
+        getInventario();
     ?>
 
     <!-- <ul>
