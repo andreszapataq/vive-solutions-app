@@ -12,6 +12,12 @@ a{
     text-decoration: none;
 }
 
+hr{
+    width: 50%;
+    border-width: 0.5px;
+    border-color: #BBB;
+}
+
 .logo{
     padding: 4em;
 }
@@ -114,4 +120,23 @@ input[type=submit]{
     border: solid 0.1px #7F7F7F;
     padding: 30px;
     margin: 10px;
+}
+
+/* INVENTARIO */
+.buscador{
+    margin: 11%;
+}
+
+.inventario{
+    display: flex;
+    justify-content: space-around;
+    width: 85%;
+    margin: auto;
+    color: #7F7F7F;
+    font-size: 1.2em;
+}
+
+.invItem2{
+    color: #24C0C0;
+    font-weight: 500;
 }

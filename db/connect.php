@@ -1,8 +1,13 @@
 <?php
     function getConnection(){
-        $host = 'localhost';
+        /* $host = 'localhost';
         $user = 'tecnologico';
         $password = 'CoolerMaster22!';
+        $dbname = 'tecnologico_vivesolutionsapp'; */
+
+        $host = 'localhost';
+        $user = 'root';
+        $password = 'Master2233*';
         $dbname = 'tecnologico_vivesolutionsapp';
 
         $dsn = 'mysql:host='. $host .';dbname='. $dbname;
@@ -32,9 +37,5 @@
         $stmt->execute();
         $inventario = $stmt->fetchAll();
 
-        foreach($inventario as $inv){
-            echo $inv->prodnombre . ' ' . $inv->stock . '<br>';
-        }
-
-        return $inv;
+        return $inventario;
     }

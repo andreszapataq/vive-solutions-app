@@ -11,15 +11,24 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Inventario</title>
 </head>
-<body>
-    <?php
-        getInventario();
-    ?>
 
-    <!-- <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul> -->
+<body>
+    <header class="buscador">
+        <div>
+            <input type="text" name="buscar" placeholder="Buscar">
+        </div>
+    </header>
+    <main>
+        <?php $inventario = getInventario(); ?>
+        <!-- Es bueno que la variable se llame igual que en la función? -->
+        <?php foreach($inventario as $inv): ?>
+        <div class="inventario" <?php echo $inv->prodnombre ?>>
+            <div class="invItem1"><?= $inv->prodnombre ?></div>
+            <div class="invItem2"><?= $inv->stock ?></div>
+        </div>
+        <hr>
+        <?php endforeach; ?>
+    </main>
 </body>
+
 </html>
