@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header class="buscador">
+    <header class="header-inventario">
         <div>
             <input type="text" name="buscar" placeholder="Buscar">
         </div>
@@ -22,11 +22,11 @@
         <?php $inventario = getInventario(); ?>
         <!-- Es bueno que la variable se llame igual que en la función? -->
         <?php foreach($inventario as $inv): ?>
-        <div class="inventario" <?php echo $inv->prodnombre ?>>
-            <div class="invItem1"><?= $inv->prodnombre ?></div>
-            <div class="invItem2"><?= $inv->stock ?></div>
-        </div>
-        <hr>
+            <div class="inventario" <?php echo $inv->prodnombre ?>>
+                <div class="invItem1"><?= $inv->prodnombre ?></div>
+                <div class="invItem2"><?= $inv->stock ?></div>
+            </div>
+            <hr>
         <?php endforeach; ?>
     </main>
 </body>

@@ -39,3 +39,32 @@
 
         return $inventario;
     }
+
+    function getCliente(){
+        $sql = 'SELECT * FROM Cliente';
+        $pdo = getConnection();
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $cliente = $stmt->fetchAll();
+
+        return $cliente;
+    }
+
+    function getProducto(){
+        $sql = 'SELECT * FROM Producto';
+        $pdo = getConnection();
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $producto = $stmt->fetchAll();
+
+        return $producto;
+    }
+
+    function consigProducto(){
+        $sql = 'UPDATE Stock SET stock = stock - salida = :salida WHERE prodcodigo = :prodcodigo';
+        $pdo = getConnection();
+        $stmt = $pdo->prepare($sql);
+        $stmt = execute();
+        
+        echo 'Consignado';
+    }

@@ -3,7 +3,6 @@
 }
 
 body{
-   /* line-height: 1.6; */
    font-family: 'Muli', sans-serif;
    text-align: center;
 }
@@ -18,29 +17,21 @@ hr{
     border-color: #BBB;
 }
 
-.logo{
-    padding: 4em;
-}
-
 img{
     width: 100%;
     height: auto;
 }
 
-input[type=text]{   
-    /* Remove First */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+.logo-index{
+    padding: 4em;
+}
 
-    /* Then Style */
-    border-radius: 15px;
-    border: 1px dashed #BBB;
-    padding: 10px;
-    line-height: 20px;
-    text-align: center;
-    background: transparent;
-    outline: none;    
+.header-dashboard{
+    margin: 11%;
+}
+
+.logo-dashboard{
+    width: 40%;
 }
 
 input[type=text]{
@@ -110,20 +101,28 @@ input[type=submit]{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: ". ." ". .";
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    /* grid-template-areas: ". ." ". ."; */
 }
 
 .one, .two, .three, .four{
     background-color: #1EC0BF;
     color: white;
     border-radius: 15px;
-    border: solid 0.1px #7F7F7F;
     padding: 30px;
-    margin: 10px;
+}
+
+.one, .three{
+    margin-left: 30px;
+}
+
+.two, .four{
+    margin-right: 30px;
 }
 
 /* INVENTARIO */
-.buscador{
+.header-inventario{
     margin: 11%;
 }
 
