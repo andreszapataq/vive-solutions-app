@@ -1,6 +1,5 @@
 <?php
 require './db/connect.php';
-$bodega = '';
 if(isset($_POST['cliente'])){
     $cliente = $_POST['cliente'];
     $sql = 'SELECT * FROM salida WHERE cliente = :cliente';
@@ -59,12 +58,14 @@ if(isset($_POST['cliente'])){
                 <th>Producto</th>
                 <th>Total</th>
             </tr>
+            <?php if(isset($bodega)): ?>
             <?php foreach($bodega as $bod): ?>
                 <tr>
                     <td><?= $bod->producto; ?></td>
                     <td><?= $bod->cantidad; ?></td>
                 </tr>
             <?php endforeach; ?>
+            <?php endif; ?>
         </table>
     </main>
 </body>
