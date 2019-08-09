@@ -60,11 +60,22 @@
         return $producto;
     }
 
-    function consigProducto(){
-        $sql = 'UPDATE Stock SET stock = stock - salida = :salida WHERE prodcodigo = :prodcodigo';
+    function consigProducto($cliente, $producto, $cantidad){
+        // $message = '';
+        $sql = 'INSERT INTO salida(cliente, producto, cantidad)  VALUES(:cliente, :producto, :cantidad)';
         $pdo = getConnection();
         $stmt = $pdo->prepare($sql);
-        $stmt = execute();
-        
-        echo 'Consignado';
+        if($stmt->execute([':cliente' => $cliente, ':producto' => $producto, ':cantidad' => $cantidad])){
+            echo 'Consignado con éxito!';
+        }
     }
+
+    /* function consulBodega($cliente){
+        $sql = 'SELECT * FROM salida WHERE cliente = :cliente';
+        $pdo = getConnection();
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([':cliente' => $cliente]);
+        $bodega = $stmt->fetchAll();
+
+        return $bodega;
+    } */

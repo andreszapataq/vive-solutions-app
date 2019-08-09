@@ -13,21 +13,53 @@
 </head>
 
 <body>
+    <header class="header-consignar">
+        <nav>
+            <ul>
+                <li>
+                    <a href="dashboard.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="inventario.php">Inventario</a>
+                </li>
+                <li>
+                    <a href="consignar.php">Consignar</a>
+                </li>
+                <li>
+                    <a href="bodegas.php">Bodegas</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <select name="cliente">
-            <?php $cliente = getCliente(); ?>
-            <?php foreach($cliente as $cli): ?>
-                <option><?= $cli->clinombre ?></option>
-            <?php endforeach; ?>
-        </select><br>
-        <select name="producto">
-            <?php $producto = getProducto(); ?>
-            <?php foreach($producto as $prod): ?>
-                <option><?= $prod->prodnombre ?></option>
-            <?php endforeach; ?>
-        </select><br>
-        <input type="number" name="salida"><br>
-        <a href="./inventario.php">Enviar</a>
+        <div class="consignar">
+            <form action="./salida.php" method="POST">
+                <p>
+                    <!-- <input type="text" name="cliente"> -->
+                    <select name="cliente">
+                        <?php $cliente = getCliente(); ?>
+                        <?php foreach($cliente as $cli): ?>
+                            <option><?= $cli->clinombre; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </p>
+                <p>
+                    <!-- <input type="text" name="producto"> -->
+                    <select name="producto">
+                        <?php $producto = getProducto(); ?>
+                        <?php foreach($producto as $prod): ?>
+                            <option><?= $prod->prodnombre; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </p>
+                <p>
+                    <input type="text" name="cantidad">
+                </p>
+                <p>
+                    <input type="submit" value="Consignar">
+                </p>                
+            </form>
+        </div>
     </main>
 </body>
 

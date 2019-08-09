@@ -14,6 +14,22 @@
 
 <body>
     <header class="header-inventario">
+        <nav>
+            <ul>
+                <li>
+                    <a href="dashboard.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="inventario.php">Inventario</a>
+                </li>
+                <li>
+                    <a href="consignar.php">Consignar</a>
+                </li>
+                <li>
+                    <a href="bodegas.php">Bodegas</a>
+                </li>
+            </ul>
+        </nav>
         <div>
             <input type="text" name="buscar" placeholder="Buscar">
         </div>
@@ -22,7 +38,7 @@
         <?php $inventario = getInventario(); ?>
         <!-- Es bueno que la variable se llame igual que en la función? -->
         <?php foreach($inventario as $inv): ?>
-            <div class="inventario" <?php echo $inv->prodnombre ?>>
+            <div class="inventario">
                 <div class="invItem1"><?= $inv->prodnombre ?></div>
                 <div class="invItem2"><?= $inv->stock ?></div>
             </div>
