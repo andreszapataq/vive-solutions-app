@@ -7,8 +7,9 @@ body{
    text-align: center;
 }
 
-a{
+a:link, a:visited, a:hover, a:active{
     text-decoration: none;
+    color: #7F7F7F;
 }
 
 hr{
@@ -17,12 +18,14 @@ hr{
     border-color: #BBB;
 }
 
-ul{
+nav ul{
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
     list-style-type: none;
 }
 
 li{
-    display: inline;
     padding: 11px;
 }
 
@@ -51,7 +54,7 @@ input{
     width: 75%;
     color: #D4D4D4;
     height: 2.7rem;
-    outline: none;   
+    outline: none;
 }
 
 .index-submit{
@@ -68,7 +71,7 @@ input{
     text-align: center;
     width: 75%;
     height: 2.7rem;
-    outline: none;   
+    outline: none;
 }
 
 .fecha{
@@ -124,13 +127,31 @@ input{
     margin: 11%;
 }
 
+.inv-buscar{
+    padding-bottom: 7%;
+}
+
+.inv-form{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #9A9C9B;
+    border-radius: 17px;
+    font-family: 'Muli', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    color: #7F7F7F;
+    width: 75%;
+    outline: none;
+}
+
 .inventario{
     display: flex;
     justify-content: space-between;
     width: 86%;
     margin: auto;
     color: #7F7F7F;
-    font-size: 1.2em;
+    font-size: .9em;
 }
 
 /* .invItem1{
@@ -150,7 +171,48 @@ input{
     margin: 11%;
 }
 
+.consig-form, .bodg-form{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #9A9C9B;
+    border-radius: 17px;
+    font-family: 'Muli', sans-serif;
+    font-size: 1em;
+    color: #7F7F7F;
+    outline: none;
+    /* text-align: center;
+    width: 75%;
+    height: 2.7rem; */
+}
+
+.consig-submit, .bodg-submit{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 5px 15px;
+    background-color: #1EC0BF;
+    color: white;
+    border: none;
+    border-radius: 17px;
+    font-family: 'Muli', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    outline: none;
+    /* width: 75%;
+    height: 2.7rem; */
+}
+
 /* BODEGAS */
 .header-bodegas{
     margin: 11%;
+}
+
+table{
+    margin: 0 auto;
+}
+
+.bodProducto{
+    text-align: left;
+    font-size: .9em;
 }

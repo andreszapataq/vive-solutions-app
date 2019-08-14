@@ -30,11 +30,11 @@
                 </li>
             </ul>
         </nav>
-        <div>
-            <input type="text" name="buscar" placeholder="Buscar">
-        </div>
     </header>
     <main>
+        <div class="inv-buscar">
+            <input type="text" class="inv-form" name="buscar" placeholder="Buscar">
+        </div>
         <?php $inventario = getInventario(); ?>
         <!-- Es bueno que la variable se llame igual que en la función? -->
         <?php foreach($inventario as $inv): ?>

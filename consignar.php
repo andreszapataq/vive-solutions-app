@@ -33,10 +33,10 @@
     </header>
     <main>
         <div class="consignar">
-            <form action="./salida.php" method="POST">
+            <form name="consignarForm" action="./salida.php" onsubmit="return validarForm()" method="POST">
                 <p>
                     <!-- <input type="text" name="cliente"> -->
-                    <select name="cliente">
+                    <select name="cliente" class="consig-form">
                         <?php $cliente = getCliente(); ?>
                         <?php foreach($cliente as $cli): ?>
                             <option><?= $cli->clinombre; ?></option>
@@ -45,7 +45,7 @@
                 </p>
                 <p>
                     <!-- <input type="text" name="producto"> -->
-                    <select name="producto">
+                    <select name="producto" class="consig-form">
                         <?php $producto = getProducto(); ?>
                         <?php foreach($producto as $prod): ?>
                             <option><?= $prod->prodnombre; ?></option>
@@ -53,14 +53,15 @@
                     </select>
                 </p>
                 <p>
-                    <input type="text" name="cantidad">
+                    <input type="text" name="cantidad" class="consig-form">
                 </p>
                 <p>
-                    <input type="submit" value="Consignar">
+                    <input type="submit" class="consig-submit" value="Consignar">
                 </p>                
             </form>
         </div>
     </main>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

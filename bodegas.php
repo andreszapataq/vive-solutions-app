@@ -2,7 +2,12 @@
 require './db/connect.php';
 if(isset($_POST['cliente'])){
     $cliente = $_POST['cliente'];
-    $sql = 'SELECT * FROM salida WHERE cliente = :cliente';
+    $sql = 'SELECT producto AS Producto,
+    SUM(cantidad) AS Total
+    FROM salida
+    WHERE cliente = :cliente
+    GROUP BY producto
+    ORDER BY Total DESC';
     $pdo = getConnection();
     $stmt = $pdo->prepare($sql);
     $stmt->execute([':cliente' => $cliente]);
@@ -42,7 +47,7 @@ if(isset($_POST['cliente'])){
     <main>
         <form method="POST">
             <p>
-                <select name="cliente">
+                <select name="cliente" class="bodg-form">
                     <?php $cliente = getCliente(); ?>
                     <?php foreach($cliente as $cli): ?>
                         <option><?= $cli->clinombre; ?></option>
@@ -50,23 +55,23 @@ if(isset($_POST['cliente'])){
                 </select>
             </p>
             <p>
-                <input type="submit" value="Consultar">
+                <input type="submit" class="bodg-submit" value="Consultar">
             </p>
         </form>
-        <table>
-            <tr>
-                <th>Producto</th>
-                <th>Total</th>
-            </tr>
-            <?php if(isset($bodega)): ?>
+        <?php if(isset($bodega)): ?>
+            <table class="bodega">
+                <tr>
+                    <th>Producto</th>
+                    <th>Total</th>
+                </tr>
             <?php foreach($bodega as $bod): ?>
                 <tr>
-                    <td><?= $bod->producto; ?></td>
-                    <td><?= $bod->cantidad; ?></td>
+                    <td class="bodProducto"><?= $bod->Producto; ?></td>
+                    <td><?= $bod->Total; ?></td>
                 </tr>
             <?php endforeach; ?>
-            <?php endif; ?>
-        </table>
+            </table>
+        <?php endif; ?>
     </main>
 </body>
 
