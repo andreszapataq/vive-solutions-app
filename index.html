@@ -11,29 +11,29 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo-index">
-            <img src="images/logo.jpg" alt="Vive Solutions Logo">
+    <header class="login-header">
+        <div class="container-logo">
+            <img src="images/logo.jpg" alt="Vive Solutions Logo" class="logo">
         </div>
     </header>
-    <main>
-        <div class="form">
+    
+    <div class="login-content">
+        <div class="login-form">
             <form action="./login.php" method="POST">
                 <p>
-                    <!-- <label for="usuario">Usuario</label> -->
-                    <input type="text" class="index-form" name="usuario" placeholder="Usuario">
+                    <input type="text" class="login-input" name="usuario" placeholder="Usuario">
                 </p>
                 <p>
-                    <!-- <label for="password">Usuario</label> -->
-                    <input type="password" class="index-form" name="contrasena" placeholder="Contraseña">
+                    <input type="password" class="login-input" name="contrasena" placeholder="Contraseña">
                 </p>
                 <p>
-                    <input type="submit" class="index-submit" value="Ingresar">
+                    <input type="submit" class="login-submit" value="Ingresar">
                 </p>
             </form>
         </div>
-    </main>
-    <footer>
+    </div>
+    
+    <footer class="login-footer">
         <div class="fecha">
             <p id="fechaActual"></p>
         </div>
